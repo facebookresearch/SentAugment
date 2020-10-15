@@ -3,6 +3,8 @@
 
 SentAugment is a data augmentation technique for semi-supervised learning in NLP. It uses state-of-the-art sentence embeddings to structure the information of a very large bank of sentences. The large-scale sentence embedding space is then used to retrieve in-domain unannotated sentences for any language understanding task such that semi-supervised learning techniques like self-training and knowledge-distillation can be leveraged. This means you do not need to assume the presence of unannotated sentences to use semi-supervised learning techniques. In our paper [Self-training Improves Pre-training for Natural Language Understanding](https://arxiv.org/abs/2010.02194), we show that SentAugment provides strong gains on multiple language understanding tasks when used in combination with self-training or knowledge distillation.
 
+![Model](sentaugment_figure.pdf)
+
 ## Dependencies
 
 *  [PyTorch](https://pytorch.org/)
