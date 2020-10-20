@@ -89,8 +89,9 @@ FAISS index | \#Sentences | \#Clusters | Quantization | #PCAR | Machine | Size
 [`100M_1GPU_32GB`](https://dl.fbaipublicfiles.com/sentaugment/100M_1GPU_32GB.faiss.idx) | 100M | 32768 | SQ8 | 256 | 1GPU32 | 26GiB
 [`1B_1GPU_16GB`](https://dl.fbaipublicfiles.com/sentaugment/1B_1GPU_16GB.faiss.idx) | 1B | 262144 | SQ4 | 14 | 1GPU16 | 15GiB
 [`1B_1GPU_32GB`](https://dl.fbaipublicfiles.com/sentaugment/1B_1GPU_32GB.faiss.idx) | 1B | 262144 | SQ4 | 40 | 1GPU32 | 28GiB
+[`1B_8GPU_32GB`](https://dl.fbaipublicfiles.com/sentaugment/1B_8GPU_32GB.faiss.idx) | 1B | 262144 | SQ4 | 256 | 8GPU32 | 136GiB
 
-We provide indexes that fit either on 1 GPU with 16GiB memory (1GPU16) up to a larger index that fits on 1 GPU with 32 GiB memory (1GPU32). Indexes that use 100M sentences are built from the first file "x01.cc.5b.tar.gz", and 1B indexes use the first ten files. All indexes are based on SASE embeddings.
+We provide indexes that fit either on 1 GPU with 16GiB memory (1GPU16) up to a larger index that fits on 1 GPU with 32 GiB memory (1GPU32) and one that fits on 8 GPUs (32GB). Indexes that use 100M sentences are built from the first file "x01.cc.5b.tar.gz", and 1B indexes use the first ten files. All indexes are based on SASE embeddings.
 
   ### IV.2 - How to use an index to query nearest neighbors
 You can get K nearest neighbors for each sentence of an input text file by running:
