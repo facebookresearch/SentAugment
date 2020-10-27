@@ -7,6 +7,7 @@ Example: python src/flat_retrieve.py --input $input --bank $bank --emb data/keys
 """
 
 import os
+import sys
 import torch
 import argparse
 import time
