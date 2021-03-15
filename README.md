@@ -127,3 +127,4 @@ If you found the resources here useful, please consider citing our paper:
 ## License
 
 See the [LICENSE](LICENSE) file for more details.
+The majority of SentAugment is licensed under CC-BY-NC. However, license information for PyTorch code is available at https://github.com/pytorch/pytorch/blob/master/LICENSE
