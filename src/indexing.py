@@ -48,7 +48,7 @@ def CompressText(txt_fname):
     with open(txt_fname, 'r', encoding='utf-8', errors='ignore') as fin:
         for line in fin:
             offsets.append(offsets[-1] + len(bytes(line, encoding='utf-8', errors='ignore')))
-    offsets = np.array(offsets[:-1], dtype=np.int64) # discard last one
+    offsets = np.array(offsets[:-1], dtype=np.int64)  # discard last one
     offsets.tofile(fname)
 
 

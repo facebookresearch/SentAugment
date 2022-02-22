@@ -8,16 +8,13 @@ Pytorch version for Unity cluster. Check right one [here](https://pytorch.org/).
 
 `conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch`
 
-Faiss download for CPU or GPU:
-
-`conda install -c conda-forge faiss-cpu`
+Faiss download for GPU:
 
 `conda install -c conda-forge faiss-gpu`
 
 Download sentencepiece.
 
 `conda install -c conda-forge sentencepiece`
-
 
 Downloading CC data. First access CPU resource.
 
@@ -30,3 +27,10 @@ Run script to download data.
 Download XML package inside SentAugment workspace.
 
 `git clone https://github.com/facebookresearch/XLM`
+
+Access a GPU instance for creating sentence embeddings.
+
+`srun --time 1:00:00 --partition gpu --gres gpu:1 --mem 100G --pty /usr/bin/bash`
+
+
+

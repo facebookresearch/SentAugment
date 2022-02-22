@@ -60,7 +60,7 @@ Now that you have constructed a sentence embedding space by encoding many senten
 From an input query sentence, you can retrieve nearest neighbors from the bank by running:
 
 ```bash
-bank=data/keys.txt.ref.bin64  # compressed text file (bank)
+bank=data/keys.txt  # compressed text file (bank)
 emb=data/keys.pt  # embeddings of sentences (keys)
 K=10000  # number of sentences to retrieve per query
 

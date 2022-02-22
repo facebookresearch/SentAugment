@@ -71,12 +71,14 @@ def main():
             line = spm_model.EncodeAsPieces(line.rstrip())
             line = line[:args.max_words - 1]
             sentences.append(line)
-            print(f"loading sentences line {i + 1}...")
+            if i % 10_000 == 0:
+                print(f"loading sentences line {i + 1}...")
 
     # encode sentences
     embs = []
     for i in range(0, len(sentences), args.batch_size):
-        print(f"Encoding sentences batch {i + 1}...")
+        if i % 100 == 0:
+            print(f"encoding sentences batch {i + 1}...")
 
         batch = sentences[i:i+args.batch_size]
         lengths = torch.LongTensor([len(s) + 1 for s in batch])
