@@ -67,14 +67,17 @@ def main():
     # load sentences
     sentences = []
     with open(args.input) as f:
-        for line in f:
+        for i, line in enumerate(f):
             line = spm_model.EncodeAsPieces(line.rstrip())
             line = line[:args.max_words - 1]
             sentences.append(line)
+            print(f"loading sentences line {i + 1}...")
 
     # encode sentences
     embs = []
     for i in range(0, len(sentences), args.batch_size):
+        print(f"Encoding sentences batch {i + 1}...")
+
         batch = sentences[i:i+args.batch_size]
         lengths = torch.LongTensor([len(s) + 1 for s in batch])
         bs, slen = len(batch), lengths.max().item()
@@ -96,6 +99,7 @@ def main():
 
     # save embeddings
     torch.save(torch.cat(embs, dim=0).squeeze(0), args.output)
+
 
 if __name__ == "__main__":
     main()
